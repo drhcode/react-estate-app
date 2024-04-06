@@ -1,7 +1,14 @@
+import Footer from "./componenets/footer/Footer";
+import Navbar from "./componenets/navbar/Navbar";
+import "./layout.scss";
+
 function App() {
   return (
-    <div>Hello World</div>
-  )
+    <div className="layout">
+      <Navbar />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
