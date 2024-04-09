@@ -1,0 +1,104 @@
+@import "../../layout.scss";
+
+.searchBar {
+  .type {
+    button {
+      padding: 16px 36px;
+      border: none;
+      cursor: pointer;
+      text-transform: capitalize;
+      background-color: white;
+
+      &.active {
+        background: black;
+        color: white;
+        text-transform: capitalize;
+      }
+
+      &:first-child {
+        border-top-left-radius: 10px;
+        border-right: none;
+
+        @include sm {
+          border-bottom: 1px solid #999;
+        }
+      }
+
+      &:last-child {
+        border-top-right-radius: 10px;
+        border-left: none;
+      }
+    }
+  }
+  form {
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    border: 1px solid #999;
+
+    @include sm {
+      flex-direction: column;
+      border: none;
+    }
+
+    input {
+      padding: 0px 10px;
+      border: none;
+      width: 200px;
+      border-right: 1px solid #999;
+
+      @include lg {
+        padding: 0px 20px;
+
+        &:nth-child(2),
+        :nth-child(3) {
+          width: 140px;
+        }
+      }
+
+      @include sm {
+        padding: 20px;
+        // border-bottom: 1px solid #999;
+        border-right: none;
+        margin-bottom: 5px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      @include md {
+        width: 200px;
+        &:nth-child(2),
+        :nth-child(3) {
+          width: 200px;
+        }
+      }
+
+      @include sm {
+        width: auto;
+        &:nth-child(2),
+        :nth-child(3) {
+          width: auto;
+        }
+      }
+    }
+
+    button {
+      border: none;
+      cursor: pointer;
+      background-color: #fece51;
+      flex: 1;
+
+      @include sm {
+        padding: 15px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+        margin-bottom: 5px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+    }
+  }
+}
