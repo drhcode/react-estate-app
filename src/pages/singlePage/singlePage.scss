@@ -1,0 +1,78 @@
+.singlePage {
+  display: flex;
+  height: 100%;
+  .details {
+    flex: 3;
+
+    .wrapper {
+      padding-right: 50px;
+
+      .info {
+        margin-top: 50px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            h1 {
+              font-size: 24px;
+            }
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: #888;
+              font-size: 14px;
+
+              img {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            .price {
+              padding: 5px;
+              background: rgb(254, 205, 81, 0.438);
+              border-radius: 5px;
+              width: max-content;
+              font-size: 20px;
+              font-weight: 500;
+            }
+          }
+          .userInfo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 20px 40px;
+            background: #fece51;
+            border-radius: 10px;
+            font-weight: 600;
+            img {
+              width: 64px;
+              height: 64px;
+              object-fit: cover;
+              border-radius: 50%;
+            }
+          }
+        }
+        .bottom {
+          color: #555;
+          line-height: 20px;
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+
+    .wrapper {
+      padding-right: 0px 20px;
+    }
+  }
+}
