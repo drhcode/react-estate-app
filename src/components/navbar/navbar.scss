@@ -9,23 +9,23 @@ nav {
   a {
     transition: all 0.4s ease;
 
-    &:hover {
-      scale: 1.02;
-    }
-
     @include sm {
       display: none;
+    }
+
+    &:hover {
+      scale: 1.05;
     }
   }
 
   .left {
     flex: 3;
     display: flex;
-    gap: 50px;
     align-items: center;
+    gap: 50px;
 
     .logo {
-      font-weight: 900;
+      font-weight: bold;
       font-size: 20px;
       display: flex;
       align-items: center;
@@ -36,72 +36,103 @@ nav {
       }
 
       span {
-        @include sm {
+        @include md {
           display: none;
         }
-        @include md {
+
+        @include sm {
           display: initial;
         }
       }
     }
   }
-
   .right {
     flex: 2;
     display: flex;
-    justify-content: flex-end;
-    gap: 10px;
     align-items: center;
-    background: #fcf5f3;
+    justify-content: flex-end;
+    background-color: #fcf5f3;
     height: 100%;
 
     @include md {
-      background: transparent;
+      background-color: transparent;
     }
 
     a {
       padding: 12px 24px;
-      margin: 10px;
+      margin: 20px;
     }
 
-    span {
+    .user {
       display: flex;
+      align-items: center;
+      font-weight: bold;
 
-      @include sm {
-        display: none;
+      img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+
+      span {
+        @include sm {
+          display: none;
+        }
+      }
+
+      .profile {
+        padding: 12px 24px;
+        background-color: #fece51;
+        cursor: pointer;
+        border: none;
+        position: relative;
+
+        .notification {
+          position: absolute;
+          top: -8px;
+          right: -8px;
+          background-color: red;
+          color: white;
+          border-radius: 50%;
+          width: 26px;
+          height: 26px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
       }
     }
 
     .register {
-      background: #fece51;
-      color: black;
-      padding: 20px;
+      background-color: #fece51;
     }
 
     .menuIcon {
       display: none;
-      z-index: 99;
-
-      @include sm {
-        display: inline;
-      }
+      z-index: 999;
 
       img {
         width: 36px;
         height: 36px;
         cursor: pointer;
       }
+
+      @include sm {
+        display: inline;
+      }
     }
 
     .menu {
       position: absolute;
-      background: black;
+      top: 0;
+      right: -50%;
+      background-color: black;
       color: white;
       height: 100vh;
       width: 50%;
-      top: 0;
-      right: -50%;
-      transition: 0.5s ease-in-out;
+      transition: all 1s ease;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -111,14 +142,11 @@ nav {
       &.active {
         right: 0;
       }
-    }
 
-    @include sm {
-      a {
-        display: initial;
-      }
-      &.active {
-        color: red;
+      @include sm {
+        a {
+          display: initial;
+        }
       }
     }
   }

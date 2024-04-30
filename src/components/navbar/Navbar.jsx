@@ -1,54 +1,62 @@
-import "./navbar.scss";
 import { useState } from "react";
+import "./navbar.scss";
+import { Link } from "react-router-dom";
 
-const Navbar = () => {
+function Navbar() {
   const [open, setOpen] = useState(false);
 
+  const user = true;
   return (
     <nav>
       <div className="left">
         <a href="/" className="logo">
-          <h1>Real Estate</h1>
+          <img src="/logo.png" alt="" />
+          <span>LamaEstate</span>
         </a>
-        <a href="#">Home</a>
-        <a href="#">Properties</a>
-        <a href="#">Agents</a>
-        <a href="#">About Us</a>
-        <a href="#">Contact Us</a>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        <a href="/">Agents</a>
       </div>
       <div className="right">
-        <span>
-          <a href="#">Login</a>
-          <a href="#" className="register">
-            Sign Up
-          </a>
-        </span>
+        {user ? (
+          <div className="user">
+            <img
+              src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+              alt=""
+            />
+            <span>John Doe</span>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/">Sign in</a>
+            <a href="/" className="register">
+              Sign up
+            </a>
+          </>
+        )}
         <div className="menuIcon">
           <img
             src="/menu.png"
-            alt="logo"
+            alt=""
             onClick={() => setOpen((prev) => !prev)}
           />
         </div>
         <div className={open ? "menu active" : "menu"}>
-          <a
-            href="#"
-            onClick={() => {
-              setOpen(false);
-            }}
-          >
-            Home
-          </a>
-          <a href="#">Properties</a>
-          <a href="#">Agents</a>
-          <a href="#">About Us</a>
-          <a href="#">Contact Us</a>
-          <a href="#">Sign In</a>
-          <a href="#">Sign Up</a>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
+          <a href="/">Sign in</a>
+          <a href="/">Sign up</a>
         </div>
       </div>
     </nav>
   );
-};
+}
 
 export default Navbar;
