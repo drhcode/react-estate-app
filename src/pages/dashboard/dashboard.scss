@@ -1,0 +1,76 @@
+.dashboard {
+  .content {
+    display: flex;
+    flex-direction: column;
+    .dataRow {
+      display: flex;
+      justify-content: space-around;
+      margin-bottom: 20px;
+      background: #f2f2f2;
+      padding: 10px;
+      border-radius: 10px;
+      .itemTitle {
+        cursor: pointer;
+        padding: 10px;
+        margin: 5px;
+        border-radius: 5px;
+      }
+
+      .itemTitle.active {
+        background-color: #f0f0f0;
+        font-weight: bold;
+      }
+    }
+    .itemsData {
+      display: flex;
+      flex-direction: column;
+      .overviewData {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 20px;
+        .overview {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          .overviewNumber {
+            font-size: 2rem;
+            font-weight: bold;
+          }
+          .overviewText {
+            text-align: center;
+          }
+        }
+        .searchBox {
+          display: flex;
+          align-items: center;
+          input {
+            padding: 5px;
+            font-size: 1rem;
+          }
+          img {
+            margin-left: 5px;
+            width: 20px;
+            cursor: pointer;
+          }
+        }
+      }
+      .tasksData,
+      .projectsData,
+      .remindersData {
+        margin-bottom: 20px;
+        .taskItem {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px;
+          border-bottom: 1px solid #ccc;
+          .taskName,
+          .taskStatus,
+          .taskPriority,
+          .taskDate {
+            width: 20%;
+          }
+        }
+      }
+    }
+  }
+}
