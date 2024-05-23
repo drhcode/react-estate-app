@@ -7,8 +7,8 @@
       justify-content: space-around;
       margin-bottom: 20px;
       background: #f2f2f2;
-      padding: 10px;
-      border-radius: 10px;
+      border-radius: 5px;
+
       .itemTitle {
         cursor: pointer;
         padding: 10px;
@@ -24,33 +24,97 @@
     .itemsData {
       display: flex;
       flex-direction: column;
+
+      .dataList {
+        margin-top: 20px;
+
+        .datalistHeader {
+          font-weight: 600;
+        }
+
+        .datalistHeader,
+        .task-item {
+          display: flex;
+        }
+
+        .task-column {
+          flex: 1;
+          padding: 10px;
+          text-align: left;
+
+          &.task-name,
+          &.task-status,
+          &.task-start-date,
+          &.task-end-date,
+          &.task-due-date,
+          &.task-assigned-to,
+          &.task-priority {
+            flex: 1;
+          }
+
+          &.task-name {
+            width: 15%;
+          }
+          &.task-status {
+            width: 15%;
+          }
+          &.task-start-date {
+            width: 15%;
+          }
+          &.task-end-date {
+            width: 15%;
+          }
+          &.task-due-date {
+            width: 15%;
+          }
+          &.task-assigned-to {
+            width: 15%;
+          }
+          &.task-priority {
+            width: 10%;
+          }
+        }
+      }
       .overviewData {
         display: flex;
         justify-content: space-between;
         margin-bottom: 20px;
         .overview {
           display: flex;
-          flex-direction: column;
           align-items: center;
+          gap: 15px;
+
           .overviewNumber {
             font-size: 2rem;
             font-weight: bold;
           }
           .overviewText {
             text-align: center;
+            text-align: left;
+            font-size: 14px;
           }
         }
         .searchBox {
           display: flex;
           align-items: center;
+          position: relative;
+
           input {
-            padding: 5px;
-            font-size: 1rem;
+            width: 300px;
+            height: 35px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            padding: 0 10px;
           }
+
           img {
-            margin-left: 5px;
-            width: 20px;
-            cursor: pointer;
+            width: 15px;
+            height: 15px;
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            pointer-events: none;
           }
         }
       }
@@ -58,19 +122,21 @@
       .projectsData,
       .remindersData {
         margin-bottom: 20px;
-        .taskItem {
-          display: flex;
-          justify-content: space-between;
-          padding: 10px;
-          border-bottom: 1px solid #ccc;
-          .taskName,
-          .taskStatus,
-          .taskPriority,
-          .taskDate {
-            width: 20%;
-          }
-        }
       }
     }
+  }
+}
+
+.taskItem {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding: 10px 0;
+  width: 100%;
+
+  .taskStatus {
+    border: 1px solid red;
+    padding: 0px 10px;
+    justify-content: flex-start;
   }
 }

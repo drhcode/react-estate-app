@@ -6,6 +6,8 @@ import Login from "./pages/login/Login";
 import Dashboard from "./pages/dashboard/Dashboard";
 import Profile from "./pages/profile/Profile";
 import Projects from "./pages/projects/Projects";
+import NewProjectPage from "./pages/newProject/NewProjectPage.jsx";
+import Tasks from "./pages/tasks/Tasks.jsx";
 
 const ProtectedRoute = ({ element }) => {
   const { isAuthenticated } = useAuth();
@@ -27,6 +29,11 @@ function App() {
         {
           path: "/projects",
           element: <ProtectedRoute element={<Projects />} />,
+        },
+        { path: "/new-project", element: <NewProjectPage /> },
+        {
+          path: "/tasks",
+          element: <ProtectedRoute element={<Tasks />} />,
         },
         { path: "/profile", element: <ProtectedRoute element={<Profile />} /> },
       ],

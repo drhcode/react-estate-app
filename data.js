@@ -1,42 +1,115 @@
+import { FaUser } from "react-icons/fa6";
+
 const tasks = [
   {
     name: "Complete report",
     status: "In Progress",
     startDate: "2024-05-15",
+    endDate: "2024-05-19",
+    dueDate: "2024-05-17",
     priority: "High",
+    assignedTo: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
   },
+
   {
     name: "Prepare presentation",
     status: "Pending",
-    startDate: "2024-05-10",
-    priority: "Medium",
+    startDate: "2024-05-15",
+    endDate: "2024-05-19",
+    dueDate: "2024-05-17",
+    priority: "High",
+    assignedTo: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
   },
   {
     name: "Prepare presentation",
     status: "Overdue",
-    startDate: "2024-05-10",
-    priority: "Medium",
+    startDate: "2024-05-15",
+    endDate: "2024-05-19",
+    dueDate: "2024-05-17",
+    priority: "High",
+    assignedTo: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
   },
   {
     name: "Prepare presentation",
     status: "Suspended",
-    startDate: "2024-05-10",
-    priority: "Medium",
+    startDate: "2024-05-15",
+    endDate: "2024-05-19",
+    dueDate: "2024-05-17",
+    priority: "High",
+    assignedTo: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
   },
 ];
 
 const projects = [
   {
     projectName: "Website Redesign",
+    lastUpdated: "2024-05-12",
     startDate: "2024-04-01",
-    deadline: "2024-06-30",
-    status: "In Progress",
+    dueDate: "2024-06-30",
+    members: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
+    status: "Finished",
   },
   {
-    projectName: "Marketing Campaign",
-    startDate: "2024-05-01",
-    deadline: "2024-07-31",
-    status: "Pending",
+    projectName: "Application Creation",
+    lastUpdated: "2024-05-12",
+    startDate: "2024-04-01",
+    dueDate: "2024-06-30",
+    members: [
+      {
+        name: "Dorjan",
+        icon: FaUser,
+      },
+      {
+        name: "Marco",
+        icon: FaUser,
+      },
+    ],
+    status: "In Progress",
   },
 ];
 

@@ -1,7 +1,6 @@
 .topBar {
   display: flex;
   justify-content: space-between;
-  gap: 50px;
 
   .left {
     flex: 1;
@@ -15,6 +14,13 @@
         height: 30px;
       }
     }
+  }
+
+  .right {
+    display: flex;
+    flex-grow: 1;
+    align-items: center;
+    gap: 10px;
 
     .searchBox {
       display: flex;
@@ -39,13 +45,6 @@
         pointer-events: none;
       }
     }
-  }
-
-  .right {
-    display: flex;
-    flex-grow: 1;
-    align-items: center;
-    gap: 10px;
 
     .avatar {
       img {

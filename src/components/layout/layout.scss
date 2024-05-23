@@ -59,10 +59,11 @@
   .topBar {
     display: flex;
     padding-right: 20px;
+    justify-content: space-between;
   }
 
   .content {
     flex-grow: 1;
-    padding: 1rem;
+    padding: 10px;
   }
 }

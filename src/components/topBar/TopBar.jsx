@@ -3,19 +3,15 @@ import { MdTaskAlt } from "react-icons/md";
 import { CiTimer } from "react-icons/ci";
 import { IoIosNotifications } from "react-icons/io";
 import { RxAvatar } from "react-icons/rx";
-import { useState } from "react";
 
 const TopBar = () => {
   return (
     <div className="topBar">
-      <div className="left">
-        {/* <div className="searchBox">
+      <div className="right">
+        <div className="searchBox">
           <input type="text" placeholder="Search" />
           <img src="./searchIcon.png" alt="" />
-        </div> */}
-      </div>
-
-      <div className="right">
+        </div>
         <div className="customersArea">
           <span>Customers Area</span>
         </div>

@@ -1,0 +1,78 @@
+.projects {
+  padding: 10px;
+
+  .searchBar {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+
+    .search {
+      display: flex;
+      position: relative;
+
+      input {
+        width: 600px;
+        height: 35px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        padding: 0 10px;
+      }
+
+      img {
+        width: 15px;
+        position: absolute;
+        height: 15px;
+        position: absolute;
+        top: 50%;
+        right: 10px;
+        transform: translateY(-50%);
+        pointer-events: none;
+      }
+    }
+
+    .buttonProject {
+      background: #333f50;
+      color: white;
+      padding: 15px 25px;
+      border-radius: 5px;
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      cursor: pointer;
+
+      button {
+        border: none;
+        background: transparent;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .projectsContainer {
+    .dataList {
+      .projectHeader {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 600;
+        margin-top: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid #ddd;
+
+        .project-name,
+        .project-last-updated,
+        .project-members,
+        .project-start-date,
+        .project-end-date,
+        .project-status {
+          width: 50%;
+
+          &:last-child {
+            text-align: right;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,23 +1,7 @@
 import "./dashboard.scss";
 import dummyData from "../../../data.js";
 import { useState } from "react";
-
-const DashboardItem = ({ item }) => (
-  <div className="taskItem">
-    <div className="taskName">
-      <span>{item.name}</span>
-    </div>
-    <div className="taskStatus">
-      <span>{item.status}</span>
-    </div>
-    <div className="taskPriority">
-      <span>{item.priority}</span>
-    </div>
-    <div className="taskDate">
-      <span>{item.startDate}</span>
-    </div>
-  </div>
-);
+import DashboardItem from "./../../items/DashboardItem";
 
 const DashboardOverview = ({ data, title }) => (
   <div className="overview">
@@ -97,6 +81,15 @@ const Dashboard = () => {
             </div>
           </div>
           <div className="dataList">
+            <div className="datalistHeader">
+              <div className="task-column task-name">Name</div>
+              <div className="task-column task-status">Status</div>
+              <div className="task-column task-start-date">Start Date</div>
+              <div className="task-column task-end-date">End Date</div>
+              <div className="task-column task-due-date">Due Date</div>
+              <div className="task-column task-assigned-to">Assigned To</div>
+              <div className="task-column task-priority">Priority</div>
+            </div>
             {getCategoryData().map((item) => (
               <DashboardItem key={item.id} item={item} />
             ))}

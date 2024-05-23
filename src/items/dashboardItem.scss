@@ -1,0 +1,74 @@
+.data-list {
+  width: 100%;
+}
+
+.data-list-header {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  background-color: #f4f4f4;
+  font-weight: bold;
+}
+
+.data-list-header li {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+.data-list-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.task-item {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-item > div {
+  flex: 1;
+  padding: 5px;
+}
+
+// Projects Item Style
+.projects-table {
+  display: table;
+  width: 100%;
+  border-collapse: collapse;
+
+  .projects-table-row {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 1px solid #ddd;
+
+    &:last-child {
+      border-bottom: none;
+
+      .project-members {
+        display: flex;
+      }
+    }
+
+    .projects-table-cell {
+      padding: 10px 0px;
+      text-align: left;
+      vertical-align: middle;
+      width: 50%;
+
+      &:last-child {
+        text-align: right;
+      }
+
+      span {
+        display: block;
+      }
+
+      .member-icon {
+        margin-right: 5px;
+      }
+    }
+  }
+}
