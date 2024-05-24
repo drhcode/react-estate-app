@@ -15,17 +15,17 @@ import { useAuth } from "../../context/AuthContext.jsx";
 import "./header.scss";
 
 const menuItems = [
-  { to: "/dashboard", icon: <FaHome size={25} />, label: "Dashboard" },
-  { to: "/projects", icon: <FaProjectDiagram size={25} />, label: "Projects" },
-  { to: "/tasks", icon: <FaTasks size={25} />, label: "Tasks" },
+  { to: "/dashboard", icon: <FaHome size={20} />, label: "Dashboard" },
+  { to: "/projects", icon: <FaProjectDiagram size={20} />, label: "Projects" },
+  { to: "/tasks", icon: <FaTasks size={20} />, label: "Tasks" },
   {
     to: "/knowledge-base",
-    icon: <FaBook size={25} />,
+    icon: <FaBook size={20} />,
     label: "Knowledge Base",
   },
-  { to: "/utilities", icon: <FaCompress size={25} />, label: "Utilities" },
-  { to: "/reports", icon: <FaChartBar size={25} />, label: "Reports" },
-  { to: "/setup", icon: <IoMdSettings size={25} />, label: "Setup" },
+  { to: "/utilities", icon: <FaCompress size={20} />, label: "Utilities" },
+  { to: "/reports", icon: <FaChartBar size={20} />, label: "Reports" },
+  { to: "/setup", icon: <IoMdSettings size={20} />, label: "Setup" },
 ];
 
 const Header = () => {
@@ -51,7 +51,7 @@ const Header = () => {
       {isAuthenticated && (
         <Link to="/profile" className="userProfile">
           <span className="icon">
-            <RxAvatar size={20} />
+            <FaUser size={20} />
           </span>
           <span className="label">Profile</span>
         </Link>

@@ -35,7 +35,15 @@ const DashboardItem = ({ item }) => {
         )}
       </div>
       <div className="taskPriority">
-        <span>{priority}</span>
+        {priority && priority.length > 0 ? (
+          priority.map((priority, i) => (
+            <span key={i} title={priority.name} className="priority">
+              <FaUser />
+            </span>
+          ))
+        ) : (
+          <span>No Priority</span>
+        )}
       </div>
     </div>
   );

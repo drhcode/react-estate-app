@@ -4,7 +4,6 @@
   .searchBar {
     display: flex;
     justify-content: space-between;
-    padding-right: 10px;
 
     .search {
       display: flex;
@@ -31,21 +30,57 @@
     }
 
     .buttonProject {
-      background: #333f50;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 5px;
       display: flex;
-      gap: 40px;
       align-items: center;
-      cursor: pointer;
 
       button {
-        border: none;
-        background: transparent;
+        display: flex;
+        align-items: center;
+        background-color: #333f50;
         color: white;
-        font-size: 14px;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
         cursor: pointer;
+        text-transform: uppercase;
+
+        svg {
+          margin-left: 10px;
+        }
+      }
+    }
+
+    .searchBar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .search {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 10px;
+        }
+
+        input {
+          padding: 5px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+        }
+      }
+    }
+
+    .filters {
+      display: flex;
+      align-items: center;
+
+      select,
+      input[type="date"] {
+        margin-left: 10px;
+        padding: 5px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
       }
     }
   }

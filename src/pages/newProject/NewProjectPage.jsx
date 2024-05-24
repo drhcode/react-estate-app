@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import BreadcrumbWrapper from "../../components/breadcrumb/BreadcrumbWrapper";
 
 import "./newProject.scss";
+import ProjectSettingsTab from "./ProjectSettingsTab";
 
 const NewProjectPage = () => {
   const [newProjectData, setNewProjectData] = useState({
@@ -14,6 +15,11 @@ const NewProjectPage = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const [activeTab, setActiveTab] = useState("details");
+
+  const handleTabChange = (tab) => {
+    setActiveTab(tab);
+  };
 
   const validateForm = () => {
     const newErrors = {};
@@ -60,87 +66,110 @@ const NewProjectPage = () => {
     <div>
       <BreadcrumbWrapper title="New Project" />
       <div className="newProject">
-        <div className="newProjectForm">
-          <div className="name">
-            <label>Project Name</label>
-            <input
-              type="text"
-              name="name"
-              value={newProjectData.name}
-              onChange={handleInputChange}
-            />
-            {errors.name && <span className="error">{errors.name}</span>}
-          </div>
-          <div className="dates">
-            <div className="startDate">
-              <label>Start Date</label>
-              <input
-                type="date"
-                name="startDate"
-                value={newProjectData.startDate}
-                onChange={handleInputChange}
-              />
-              {errors.startDate && (
-                <span className="error">{errors.startDate}</span>
-              )}
-            </div>
-            <div className="dueDate">
-              <label>Due Date</label>
-              <input
-                type="date"
-                name="dueDate"
-                value={newProjectData.dueDate}
-                onChange={handleInputChange}
-              />
-              {errors.dueDate && (
-                <span className="error">{errors.dueDate}</span>
-              )}
-            </div>
-          </div>
-
-          <div className="members">
-            <label>Members</label>
-            <select
-              type="select"
-              name="members"
-              value={newProjectData.members}
-              onChange={handleInputChange}
-              selected
-            />
-            {errors.members && <span className="error">{errors.members}</span>}
-            <option
-              value={newProjectData.members}
-              selected={newProjectData.members}
-            ></option>
-          </div>
-
-          <div className="status">
-            <label>Status</label>
-            <input
-              type="text"
-              name="status"
-              value={newProjectData.status}
-              onChange={handleInputChange}
-            />
-            {errors.status && <span className="error">{errors.status}</span>}
-          </div>
-
-          <div className="description">
-            <label>Description</label>
-            <textarea
-              type="text"
-              name="description"
-              rows="4"
-              value={newProjectData.description}
-              onChange={handleInputChange}
-            />
-          </div>
-
-          <div className="buttons">
-            <button onClick={addNewProject}>Add Project</button>
-            <button onClick={cancelAddProject}>Cancel</button>
-          </div>
+        <div className="tabs">
+          <button
+            className={activeTab === "details" ? "active" : ""}
+            onClick={() => handleTabChange("details")}
+          >
+            Project Details
+          </button>
+          <button
+            className={activeTab === "settings" ? "active" : ""}
+            onClick={() => handleTabChange("settings")}
+          >
+            Project Settings
+          </button>
         </div>
+
+        {/* Form Data  */}
+        {activeTab === "details" && (
+          <div className="newProjectForm">
+            <div className="name">
+              <label>Project Name</label>
+              <input
+                type="text"
+                name="name"
+                value={newProjectData.name}
+                onChange={handleInputChange}
+              />
+              {errors.name && <span className="error">{errors.name}</span>}
+            </div>
+            <div className="dates">
+              <div className="startDate">
+                <label>Start Date</label>
+                <input
+                  type="date"
+                  name="startDate"
+                  value={newProjectData.startDate}
+                  onChange={handleInputChange}
+                />
+                {errors.startDate && (
+                  <span className="error">{errors.startDate}</span>
+                )}
+              </div>
+              <div className="dueDate">
+                <label>Due Date</label>
+                <input
+                  type="date"
+                  name="dueDate"
+                  value={newProjectData.dueDate}
+                  onChange={handleInputChange}
+                />
+                {errors.dueDate && (
+                  <span className="error">{errors.dueDate}</span>
+                )}
+              </div>
+            </div>
+
+            <div className="members">
+              <label>Members</label>
+              <select
+                type="select"
+                name="members"
+                value={newProjectData.members}
+                onChange={handleInputChange}
+                selected
+              />
+              {errors.members && (
+                <span className="error">{errors.members}</span>
+              )}
+              <option
+                value={newProjectData.members}
+                selected={newProjectData.members}
+              ></option>
+            </div>
+
+            <div className="status">
+              <label>Status</label>
+              <input
+                type="text"
+                name="status"
+                value={newProjectData.status}
+                onChange={handleInputChange}
+              />
+              {errors.status && <span className="error">{errors.status}</span>}
+            </div>
+
+            <div className="description">
+              <label>Description</label>
+              <textarea
+                type="text"
+                name="description"
+                rows="4"
+                value={newProjectData.description}
+                onChange={handleInputChange}
+              />
+            </div>
+
+            <div className="buttons">
+              <button onClick={addNewProject}>Add Project</button>
+              <button onClick={cancelAddProject}>Cancel</button>
+            </div>
+          </div>
+        )}
+
+        {/* Project settings tab */}
+        {activeTab === "settings" && <ProjectSettingsTab />}
       </div>
     </div>
   );

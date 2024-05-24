@@ -7,8 +7,8 @@ const tasks = [
     startDate: "2024-05-15",
     endDate: "2024-05-19",
     dueDate: "2024-05-17",
-    priority: "High",
-    assignedTo: [
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    members: [
       {
         name: "Dorjan",
         icon: FaUser,
@@ -26,8 +26,8 @@ const tasks = [
     startDate: "2024-05-15",
     endDate: "2024-05-19",
     dueDate: "2024-05-17",
-    priority: "High",
-    assignedTo: [
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    members: [
       {
         name: "Dorjan",
         icon: FaUser,
@@ -44,8 +44,8 @@ const tasks = [
     startDate: "2024-05-15",
     endDate: "2024-05-19",
     dueDate: "2024-05-17",
-    priority: "High",
-    assignedTo: [
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    members: [
       {
         name: "Dorjan",
         icon: FaUser,
@@ -62,8 +62,8 @@ const tasks = [
     startDate: "2024-05-15",
     endDate: "2024-05-19",
     dueDate: "2024-05-17",
-    priority: "High",
-    assignedTo: [
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    members: [
       {
         name: "Dorjan",
         icon: FaUser,
@@ -128,13 +128,13 @@ const tickets = [
   {
     subject: "Issue with login functionality",
     status: "Open",
-    priority: "High",
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
     lastReply: "2024-05-18",
   },
   {
     subject: "Billing discrepancy",
     status: "Pending",
-    priority: "Medium",
+    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
     lastReply: "2024-05-20",
   },
 ];

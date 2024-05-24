@@ -25,7 +25,19 @@ const TasksItem = ({ item }) => {
             <span>No users assigned</span>
           )}
         </div>
-        <div className="projects-table-cell project-priority">{priority}</div>
+        <div className="projects-table-cell project-priority">
+          {priority && priority.length > 0 ? (
+            <select className="priority" defaultValue={priority[0].name}>
+              {priority.map((priorityItem, i) => (
+                <option key={i} value={priorityItem.name}>
+                  {priorityItem.name}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <span>No Priority</span>
+          )}
+        </div>
       </div>
     </div>
   );
