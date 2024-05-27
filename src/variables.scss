@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+// Colors
+$primary-color: #333f50;
+$secondary-color: #5a6268;
+$success-color: #28a745;
+$danger-color: #dc3545;
+$warning-color: #ffc107;
+$info-color: #17a2b8;
+
+// Text Colors
+$text-color: #333;
+$text-white-color: #fff;
+$text-light-color: #aaa;
+$text-dark-color: #666;
+$text-muted-color: #999;
+
+// Background Colors
+$body-bg: #f8f9fa;
+$card-bg: #fff;
+
+// Padding
+$padding-small: 8px;
+$padding-medium: 16px;
+$padding-large: 24px;
+
+// Borders
+$border-width: 1px;
+$border-color: #ccc;
+$border-radius: 4px;
+
+// Fonts
+$font-family: "Inter", sans-serif;
+$font-size-small: 12px;
+$font-size-medium: 16px;
+$font-size-large: 20px;
+$font-weight-light: 300;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+
+// Box Shadows
+$box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+
+// Z-index
+$z-index-navbar: 1000;
+$z-index-dropdown: 1000;
+$z-index-modal: 1100;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Breakpoints
+$breakpoint-xs: 0;
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
+
+// Media Query Mixins
+@mixin media-breakpoint-up($size) {
+  @media (min-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-down($size) {
+  @media (max-width: $size) {
+    @content;
+  }
+}
+
+@mixin media-breakpoint-between($min-size, $max-size) {
+  @media (min-width: $min-size) and (max-width: $max-size) {
+    @content;
+  }
+}

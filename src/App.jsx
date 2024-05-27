@@ -8,6 +8,7 @@ import Profile from "./pages/profile/Profile";
 import Projects from "./pages/projects/Projects";
 import NewProjectPage from "./pages/newProject/NewProjectPage.jsx";
 import Tasks from "./pages/tasks/Tasks.jsx";
+import NewTask from "./pages/newTask/NewTask.jsx";
 
 const ProtectedRoute = ({ element }) => {
   const { isAuthenticated } = useAuth();
@@ -34,6 +35,10 @@ function App() {
         {
           path: "/tasks",
           element: <ProtectedRoute element={<Tasks />} />,
+        },
+        {
+          path: "/new-task",
+          element: <ProtectedRoute element={<NewTask />} />,
         },
         { path: "/profile", element: <ProtectedRoute element={<Profile />} /> },
       ],

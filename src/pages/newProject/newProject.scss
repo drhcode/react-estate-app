@@ -1,135 +1,111 @@
-.newProject {
+@import "../../variables.scss";
+
+.new-project {
+  padding: $padding-medium;
+
   .tabs {
     display: flex;
-    justify-content: flex-start;
+    margin-bottom: 20px;
     gap: 10px;
-    padding: 10px 20px;
 
     button {
-      background-color: #f5f7f9;
-      color: #333;
-      padding: 10px 20px;
+      background-color: #fff;
       border: none;
-      border-radius: 5px;
+      padding: 10px 20px;
       cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #e1e4e8;
-      }
+      border-bottom: 2px solid transparent;
+      border-radius: 5px;
 
       &.active {
-        background-color: #333f50;
-        color: white;
+        background-color: $primary-color;
+        color: $text-white-color;
+      }
+
+      &:not(.active):hover {
+        background-color: $secondary-color;
+        color: $text-white-color;
       }
     }
   }
 
-  .newProjectForm {
-    display: flex;
-    flex-direction: column;
-    align-items: start;
+  .new-project-form {
+    background: #fff;
     padding: 20px;
-    border: 1px solid #f5f7f9;
-    border-radius: 5px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 
-    .name,
-    .dates,
-    .members,
-    .status,
-    .description {
-      margin-bottom: 15px;
-      width: 100%;
-      input,
-      textarea,
-      select {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
-        transition: border-color 0.3s;
-
-        &:focus {
-          border-color: #007bff;
-        }
-      }
-
-      .error {
-        background: red;
-        color: white;
-        font-size: 0.8rem;
-        padding: 2px;
-        border-radius: 2px;
-      }
-    }
-
-    .dates {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-
-      .startDate,
-      .dueDate {
-        flex: 1;
-
-        input {
-          width: 100%;
-        }
-      }
-    }
-
-    .buttons {
-      display: flex;
-      justify-content: space-between;
-      gap: 20px;
-    }
-
-    button {
-      background: #333f50;
-      color: white;
-      padding: 15px 25px;
-      border-radius: 5px;
-      border: none;
-      display: flex;
-      gap: 40px;
-      align-items: center;
-      cursor: pointer;
-      transition: background-color 0.3s;
-
-      &:hover {
-        background-color: #6a7380;
-      }
-    }
-  }
-
-  .projectSettingsTab {
-    padding: 20px;
-    border: 1px solid #f5f7f9;
-    border-radius: 5px;
-    margin-top: 20px;
-
-    // Styles for options
-    .option {
-      margin-bottom: 15px;
-      width: 100%;
+    .form-group {
+      margin-bottom: 20px;
 
       label {
         display: block;
         margin-bottom: 5px;
+        font-weight: $font-weight-normal;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: #333f50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #5a6268;
+        }
+
+        &:last-child {
+          background-color: #333f50;
+
+          &:hover {
+            background-color: #5a6268;
+          }
+        }
+      }
+    }
+  }
+
+  .project-settings-tab {
+    .option {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: $font-weight-normal;
       }
 
       select {
-        width: calc(100% - 20px); /* Adjusted for padding */
+        width: 100%;
         padding: 10px;
         border: 1px solid #ccc;
-        border-radius: 5px;
-        outline: none;
-        transition: border-color 0.3s;
+        border-radius: 4px;
+        margin-bottom: 5px;
       }
 
       .description {
-        font-size: 0.8rem;
+        font-size: 0.9em;
         color: #666;
       }
     }

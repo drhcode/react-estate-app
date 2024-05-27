@@ -32,7 +32,7 @@ const Tasks = () => {
       : true;
     const matchesDueDate =
       (!dueDateStart || new Date(task.dueDate) >= new Date(dueDateStart)) &&
-      (!dueDateEnd || new Date(task.dueDate) <= new Date(dueDateEnd));
+      (!dueDateEnd || new Date(task.dueDate) <= new Date());
     return matchesStatus && matchesDueDate;
   });
 
@@ -74,7 +74,7 @@ const Tasks = () => {
             />
           </div>
           <div className="buttonProject">
-            <button onClick={() => navigate("/new-project")}>
+            <button onClick={() => navigate("/new-task")}>
               New Task <FaPlus color="white" />
             </button>
           </div>
@@ -89,7 +89,6 @@ const Tasks = () => {
               <div className="taskMembers">Members</div>
               <div className="taskPriority">Priority</div>
             </div>
-
             {filteredTasks &&
               Array.isArray(filteredTasks) &&
               filteredTasks.map((item, index) => (

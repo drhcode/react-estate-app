@@ -1,0 +1,119 @@
+.new-task {
+  padding: 20px;
+
+  .new-task-form {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .additional-options {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 20px;
+
+      .checkbox-group {
+        display: flex;
+        gap: 20px;
+
+        input[type="checkbox"] {
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+
+        label {
+          margin-bottom: 10px;
+          font-weight: 500;
+        }
+      }
+
+      .file-upload {
+        button {
+          background-color: #333f50;
+          color: #fff;
+          border: none;
+          padding: 10px 20px;
+          border-radius: 4px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #5a6268;
+          }
+        }
+      }
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      input,
+      select,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+
+      .input-group {
+        display: flex;
+        align-items: center;
+
+        input[type="checkbox"] {
+          margin-left: 10px;
+          margin-right: 5px;
+        }
+      }
+
+      .custom-repeat-inputs {
+        display: flex;
+        gap: 10px;
+        margin-top: 10px;
+
+        input,
+        select {
+          width: auto;
+          flex: 1;
+        }
+      }
+
+      .error {
+        color: red;
+        font-size: 0.9em;
+        margin-top: 5px;
+      }
+    }
+
+    .form-buttons {
+      display: flex;
+      justify-content: space-between;
+
+      button {
+        background-color: #333f50;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #5a6268;
+        }
+
+        &:last-child {
+          background-color: #333f50;
+
+          &:hover {
+            background-color: #5a6268;
+          }
+        }
+      }
+    }
+  }
+}
