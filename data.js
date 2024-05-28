@@ -4,9 +4,9 @@ const tasks = [
   {
     name: "Complete report",
     status: "In Progress",
-    startDate: "2024-05-15",
-    endDate: "2024-05-19",
-    dueDate: "2024-05-17",
+    startDate: "2024-05-28T04:00:00-04:00",
+    endDate: "2024-05-28T06:00:00-04:00",
+    dueDate: "2024-05-28T06:00:00-04:00",
     priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
     members: [
       {
@@ -23,9 +23,9 @@ const tasks = [
   {
     name: "Prepare presentation",
     status: "Pending",
-    startDate: "2024-05-15",
-    endDate: "2024-05-19",
-    dueDate: "2024-05-17",
+    startDate: "2024-05-28T07:00:00-04:00",
+    endDate: "2024-05-28T09:00:00-04:00",
+    dueDate: "2024-05-28T08:00:00-04:00",
     priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
     members: [
       {
@@ -41,9 +41,9 @@ const tasks = [
   {
     name: "Prepare presentation",
     status: "Overdue",
-    startDate: "2024-05-15",
-    endDate: "2024-05-19",
-    dueDate: "2024-05-17",
+    startDate: "2024-05-29T09:00:00-04:00",
+    endDate: "2024-05-29T07:00:00-04:00",
+    dueDate: "2024-05-29T09:00:00-04:00",
     priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
     members: [
       {
@@ -79,9 +79,9 @@ const tasks = [
 const projects = [
   {
     projectName: "Website Redesign",
-    lastUpdated: "2024-05-12",
-    startDate: "2024-04-01",
-    dueDate: "2024-06-30",
+    lastUpdated: "2024-05-28T02:00:00-04:00",
+    startDate: "2024-05-28T02:00:00-04:00",
+    dueDate: "2024-05-28T03:00:00-04:00",
     members: [
       {
         name: "Dorjan",
@@ -96,9 +96,9 @@ const projects = [
   },
   {
     projectName: "Application Creation",
-    lastUpdated: "2024-05-12",
-    startDate: "2024-04-01",
-    dueDate: "2024-06-30",
+    lastUpdated: "2024-05-29T08:00:00-04:00",
+    startDate: "2024-05-30T08:00:00-04:00",
+    dueDate: "2024-05-30T08:00:00-04:00",
     members: [
       {
         name: "Dorjan",

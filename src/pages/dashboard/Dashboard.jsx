@@ -2,6 +2,7 @@ import "./dashboard.scss";
 import dummyData from "../../../data.js";
 import { useState } from "react";
 import DashboardItem from "./../../items/DashboardItem";
+import CalendarComponent from "../../components/calendar/Calendar.jsx";
 
 const DashboardOverview = ({ data, title }) => (
   <div className="overview">
@@ -95,6 +96,10 @@ const Dashboard = () => {
             ))}
           </div>
         </div>
+      </div>
+
+      <div className="content">
+        <CalendarComponent />
       </div>
     </div>
   );
