@@ -1,0 +1,32 @@
+@import "../../variables.scss";
+
+.tab-container {
+  display: flex;
+  justify-content: start;
+  margin-bottom: 20px;
+  gap: 20px;
+
+  .tab-btn {
+    padding: 10px 20px;
+    background-color: $primary-color;
+    cursor: pointer;
+    color: $text-white-color;
+    border: none;
+    border-radius: $border-radius-small;
+  }
+
+  .tab-btn.active {
+    background-color: #ddd;
+    color: $primary-color;
+  }
+
+  .tab-content {
+    display: none;
+  }
+
+  .tab-content p {
+    margin: 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+  }
+}
