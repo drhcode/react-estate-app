@@ -1,5 +1,7 @@
-// src/components/header/Header.jsx
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { IoMdSettings } from "react-icons/io";
+import { useAuth } from "../../context/AuthContext.jsx";
 import {
   FaHome,
   FaTasks,
@@ -8,10 +10,10 @@ import {
   FaCompress,
   FaBook,
   FaUser,
+  FaMusic,
+  FaFileExport,
+  FaAngleDown,
 } from "react-icons/fa";
-import { RxAvatar } from "react-icons/rx";
-import { IoMdSettings } from "react-icons/io";
-import { useAuth } from "../../context/AuthContext.jsx";
 import "./header.scss";
 
 const menuItems = [
@@ -22,14 +24,58 @@ const menuItems = [
     to: "/knowledge-base",
     icon: <FaBook size={20} />,
     label: "Knowledge Base",
+    submenu: [
+      { to: "./article-list", label: "Article List" },
+      { to: "./new-article-list", label: "New Article List" },
+      { to: "./groups", label: "Groups" },
+    ],
   },
-  { to: "/utilities", icon: <FaCompress size={20} />, label: "Utilities" },
-  { to: "/reports", icon: <FaChartBar size={20} />, label: "Reports" },
+  {
+    to: "/utilities",
+    icon: <FaCompress size={20} />,
+    label: "Utilities",
+    submenu: [
+      {
+        to: "/media",
+        label: "Media",
+      },
+      {
+        to: "/csv-export",
+        label: "CSV Export",
+      },
+      { to: "/calendar", label: "Calendar" },
+      { to: "/Announcements", label: "Announcements" },
+      { to: "./Activity Log", label: "Activity Log" },
+      { to: "./ticket-pipe-log", label: "Ticket Pipe Log" },
+    ],
+  },
+  {
+    to: "/reports",
+    icon: <FaChartBar size={20} />,
+    label: "Reports",
+    submenu: [
+      {
+        to: "/timesheets-overview",
+        label: "Timesheets Overview",
+      },
+    ],
+  },
   { to: "/setup", icon: <IoMdSettings size={20} />, label: "Setup" },
 ];
 
 const Header = () => {
   const { isAuthenticated } = useAuth();
+  const [openSubmenuIndex, setOpenSubmenuIndex] = useState(null);
+  const location = useLocation();
+
+  const toggleSubmenu = (index) => {
+    setOpenSubmenuIndex((prevIndex) => (prevIndex === index ? null : index));
+  };
+
+  // Close submenu on route change
+  useEffect(() => {
+    setOpenSubmenuIndex(null);
+  }, [location]);
 
   return (
     <div className="header">
@@ -41,10 +87,34 @@ const Header = () => {
       {isAuthenticated && (
         <div className="items">
           {menuItems.map((item, index) => (
-            <Link to={item.to} key={index} className="item">
-              <span className="icon">{item.icon}</span>
-              <span className="label">{item.label}</span>
-            </Link>
+            <div key={index} className="item">
+              <Link to={item.to} className="item-link">
+                <span className="icon">{item.icon}</span>
+                <span className="label">{item.label}</span>
+              </Link>
+              {item.submenu && (
+                <div
+                  className={`dropdown ${
+                    openSubmenuIndex === index ? "active" : ""
+                  }`}
+                >
+                  <span className="icon" onClick={() => toggleSubmenu(index)}>
+                    <FaAngleDown size={20} />
+                  </span>
+                  <div className="dropdown-content">
+                    {item.submenu.map((subitem, subIndex) => (
+                      <Link
+                        to={subitem.to}
+                        key={`${index}-${subIndex}`}
+                        className="subitem"
+                      >
+                        <span className="label">{subitem.label}</span>
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}

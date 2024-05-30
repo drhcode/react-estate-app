@@ -21,7 +21,7 @@ function App() {
       path: "/",
       element: <Layout />,
       children: [
-        { path: "/", element: <Dashboard /> },
+        { path: "/", element: <ProtectedRoute element={<Dashboard />} /> },
         { path: "/login", element: <Login /> },
         {
           path: "/dashboard",
@@ -31,7 +31,10 @@ function App() {
           path: "/projects",
           element: <ProtectedRoute element={<Projects />} />,
         },
-        { path: "/new-project", element: <NewProjectPage /> },
+        {
+          path: "/new-project",
+          element: <ProtectedRoute element={<NewProjectPage />} />,
+        },
         {
           path: "/tasks",
           element: <ProtectedRoute element={<Tasks />} />,
@@ -40,7 +43,10 @@ function App() {
           path: "/new-task",
           element: <ProtectedRoute element={<NewTask />} />,
         },
-        { path: "/profile", element: <ProtectedRoute element={<Profile />} /> },
+        {
+          path: "/profile",
+          element: <ProtectedRoute element={<Profile />} />,
+        },
       ],
     },
   ]);

@@ -3,7 +3,7 @@
 .tab-container {
   display: flex;
   justify-content: start;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   gap: 20px;
 
   .tab-btn {
@@ -28,5 +28,50 @@
     margin: 0;
     padding: 20px;
     border: 1px solid #ccc;
+  }
+
+  .data-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th,
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+      font-weight: bold;
+      text-align: left;
+    }
+  }
+}
+
+// DATA TAB Style
+
+.data-tab-container {
+  .tab-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    // background-color: $tab-color;
+    font-weight: $font-weight-bold;
+    border-bottom: 1px solid $border-color;
+
+    span {
+      width: 200px;
+    }
+  }
+
+  .tab-content {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+
+    span {
+      width: 200px;
+    }
   }
 }

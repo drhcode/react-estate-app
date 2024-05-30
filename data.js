@@ -7,7 +7,7 @@ const tasks = [
     startDate: "2024-05-28T04:00:00-04:00",
     endDate: "2024-05-28T06:00:00-04:00",
     dueDate: "2024-05-28T06:00:00-04:00",
-    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    priority: "Low",
     members: [
       {
         name: "Dorjan",
@@ -26,7 +26,7 @@ const tasks = [
     startDate: "2024-05-28T07:00:00-04:00",
     endDate: "2024-05-28T09:00:00-04:00",
     dueDate: "2024-05-28T08:00:00-04:00",
-    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    priority: "High",
     members: [
       {
         name: "Dorjan",
@@ -44,7 +44,7 @@ const tasks = [
     startDate: "2024-05-29T09:00:00-04:00",
     endDate: "2024-05-29T07:00:00-04:00",
     dueDate: "2024-05-29T09:00:00-04:00",
-    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    priority: "Low",
     members: [
       {
         name: "Dorjan",
@@ -62,7 +62,7 @@ const tasks = [
     startDate: "2024-05-15",
     endDate: "2024-05-19",
     dueDate: "2024-05-17",
-    priority: [{ name: "High" }, { name: "Low" }, { name: "Medium" }],
+    priority: "Medium",
     members: [
       {
         name: "Dorjan",
